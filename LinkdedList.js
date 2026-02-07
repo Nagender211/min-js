@@ -44,13 +44,28 @@ class LinkdedList{
         console.log("prev ele",prev)
         return this
     }
+    unshift(value){
+        const newNode=new Node(value)
+        if(!this.head){
+            this.head=newNode
+            this.tail=newNode
+        }
+        else{
+            newNode.next=this.head
+            this.head=newNode
+        }
+        this.length++
+        console.log("new node",newNode)
+        return this
+    }
     
 }
 const myLinkdeList=new LinkdedList(5)
 console.log(myLinkdeList.push(3))
 console.log(myLinkdeList.push(4))
 console.log(myLinkdeList.push(6))
-
+console.log(myLinkdeList.unshift(10))
+console.log(myLinkdeList.unshift(11))
 console.log(myLinkdeList.pop())
 
 console.log("total linkded My list",myLinkdeList)
