@@ -45,25 +45,12 @@ class LinkdedList{
         return this
     }
     
-    
 }
 const myLinkdeList=new LinkdedList(5)
-console.log(myLinkdeList)
 console.log(myLinkdeList.push(3))
 console.log(myLinkdeList.push(4))
 console.log(myLinkdeList.push(6))
+
 console.log(myLinkdeList.pop())
 
-
-
-
-
-
-
-
-
-
-
-
-
- 
+console.log("total linkded My list",myLinkdeList)
