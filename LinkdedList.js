@@ -40,8 +40,6 @@ class LinkdedList{
             this.head=null
             this.tail=null
         }
-        console.log("temp var",temp)
-        console.log("prev ele",prev)
         return this
     }
     unshift(value){
@@ -55,10 +53,20 @@ class LinkdedList{
             this.head=newNode
         }
         this.length++
-        console.log("new node",newNode)
         return this
     }
-    
+    shift(){
+        if(!this.head) return undefined
+        let temp=this.head
+        this.head=this.head.next
+        temp.next=null
+        this.length--
+        if(this.length===0){
+            this.head=null
+            this.tail=null
+        }
+        return this
+    }
 }
 const myLinkdeList=new LinkdedList(5)
 console.log(myLinkdeList.push(3))
@@ -66,6 +74,9 @@ console.log(myLinkdeList.push(4))
 console.log(myLinkdeList.push(6))
 console.log(myLinkdeList.unshift(10))
 console.log(myLinkdeList.unshift(11))
+console.log(myLinkdeList.shift())
+console.log(myLinkdeList.shift())
+
 console.log(myLinkdeList.pop())
 
 console.log("total linkded My list",myLinkdeList)
