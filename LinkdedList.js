@@ -67,16 +67,22 @@ class LinkdedList{
         }
         return this
     }
+    middle(){
+        let fast=this.head
+        let slow=this.head
+        while(fast && fast.next){
+            slow=this.next
+            fast=fast.next.next
+        }
+        console.log("slow number",slow)
+        return slow
+
+    }
 }
 const myLinkdeList=new LinkdedList(5)
 console.log(myLinkdeList.push(3))
 console.log(myLinkdeList.push(4))
 console.log(myLinkdeList.push(6))
-console.log(myLinkdeList.unshift(10))
-console.log(myLinkdeList.unshift(11))
-console.log(myLinkdeList.shift())
-console.log(myLinkdeList.shift())
-
-console.log(myLinkdeList.pop())
+console.log("middle number",myLinkdeList.middle())
 
 console.log("total linkded My list",myLinkdeList)
